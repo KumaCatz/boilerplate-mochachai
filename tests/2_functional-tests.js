@@ -67,7 +67,9 @@ suite('Functional Tests', function () {
 });
 
 const Browser = require('zombie');
-Browser.site = 'http://localhost:3000';
+// Browser.site = 'https://c686dfcf-ad37-439b-b3e8-08e392dbdd2f-00-3w4tewq4wllqj.riker.replit.dev/';
+// Browser.localhost('localhost', (process.env.PORT || 3000))
+Browser.site = 'http://localhost:3000/'
 const assertionAnalyser = require('../assertion-analyser');
 
 suite('Functional Tests with Zombie.js', function () {
@@ -75,7 +77,7 @@ suite('Functional Tests with Zombie.js', function () {
 
   const browser = new Browser();
   suiteSetup(function(done) {
-    return browser.visit('/', done());
+    return browser.visit('/', done);
   });
 
   suite('Headless browser', function () {
